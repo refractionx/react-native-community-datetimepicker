@@ -14,12 +14,16 @@ import {
   DAY_OF_WEEK,
   IOS_DISPLAY,
   IOS_MODE,
+  MACOS_MODE,
+  MACOS_DISPLAY,
   WINDOWS_MODE,
   ANDROID_EVT_TYPE,
 } from './constants';
 
 export type IOSDisplay = $Keys<typeof IOS_DISPLAY>;
 export type IOSMode = $Keys<typeof IOS_MODE>;
+export type MACOSDisplay = $Keys<typeof MACOS_DISPLAY>;
+export type MACOSMode = $Keys<typeof MACOS_MODE>;
 type AndroidMode = $Keys<typeof ANDROID_MODE>;
 type WindowsMode = $Keys<typeof WINDOWS_MODE>;
 type Display = $Keys<typeof ANDROID_DISPLAY>;
@@ -152,6 +156,63 @@ export type IOSNativeProps = $ReadOnly<{|
    * Sets the preferredDatePickerStyle for picker
    */
   display?: IOSDisplay,
+
+  /**
+   * Is this picker enabled?
+   */
+  enabled?: boolean,
+|}>;
+
+
+export type MACOSSNativeProps = $ReadOnly<{|
+  ...BaseProps,
+
+  /**
+   * The date picker locale.
+   */
+  locale?: ?string,
+
+  /**
+   * The interval at which minutes can be selected.
+   */
+  minuteInterval?: MinuteInterval,
+
+  /**
+   * The date picker mode.
+   */
+  mode?: MACOSMode,
+
+  /**
+   * Timezone offset in minutes.
+   *
+   * By default, the date picker will use the device's timezone. With this
+   * parameter, it is possible to force a certain timezone offset. For
+   * instance, to show times in Pacific Standard Time, pass -7 * 60.
+   */
+  timeZoneOffsetInMinutes?: ?number,
+
+  /**
+   * The date picker text color.
+   */
+  textColor?: ?ColorValue,
+
+  /**
+   * The date picker accent color.
+   *
+   * Sets the color of the selected, date and navigation icons.
+   * Has no effect for display 'spinner'.
+   */
+  accentColor?: ?ColorValue,
+
+  /**
+   * Override theme variant used by iOS native picker
+   */
+  // themeVariant?: 'dark' | 'light',
+
+  /**
+   * Sets the preferredDatePickerStyle for picker
+   */
+  display?: MACOSDisplay,
 
   /**
    * Is this picker enabled?

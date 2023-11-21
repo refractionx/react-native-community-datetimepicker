@@ -10,15 +10,17 @@ Pod::Spec.new do |s|
   s.license      = package['license']
   s.author       = package['author']
   s.homepage     = package['homepage']
-  s.platform     = :ios, "11.0"
+  s.platforms     = { :ios => "11.0", :osx => "10.15" }
   s.source       = { :git => "https://github.com/react-native-community/datetimepicker", :tag => "v#{s.version}" }
-  s.source_files = "ios/**/*.{h,m,mm,cpp}"
+  s.ios.source_files = "ios/**/*.{h,m,mm,cpp}"
+  s.osx.source_files = "macos/**/*.{h,m,mm,cpp}"
   s.requires_arc = true
 
   if ENV['RCT_NEW_ARCH_ENABLED'] == '1'
     install_modules_dependencies(s)
   else
     s.exclude_files = "ios/fabric"
+    s.exclude_files = "macos/fabric"
 
     s.dependency "React-Core"
   end

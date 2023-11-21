@@ -28,6 +28,13 @@ export const IOS_DISPLAY = Object.freeze({
   inline: 'inline',
 });
 
+
+export const MACOS_DISPLAY = Object.freeze({
+  text: 'text',
+  stepper: 'text-stepper',
+  clock: 'clock-calendar',
+});
+
 const COMMON_MODES = Object.freeze({
   date: 'date',
   time: 'time',
@@ -41,6 +48,11 @@ export const IOS_MODE = Object.freeze({
   ...COMMON_MODES,
   datetime: 'datetime',
   countdown: 'countdown',
+});
+
+export const MACOS_MODE = Object.freeze({
+  single: 'single',
+  range: 'range',
 });
 
 export const DAY_OF_WEEK = Object.freeze({

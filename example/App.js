@@ -17,14 +17,15 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import SegmentedControl from './SegmentedControl';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import React, {useRef, useState} from 'react';
-import {Picker} from 'react-native-windows';
 import moment from 'moment-timezone';
 import {
   ANDROID_MODE,
   DAY_OF_WEEK,
   IOS_MODE,
+  MACOS_MODE,
   ANDROID_DISPLAY,
   IOS_DISPLAY,
+  MACOS_DISPLAY,
 } from '../src/constants';
 import * as RNLocalize from 'react-native-localize';
 
@@ -78,11 +79,13 @@ const Info = ({testID, title, body}) => {
 
 const MODE_VALUES = Platform.select({
   ios: Object.values(IOS_MODE),
+  macos: Object.values(MACOS_MODE),
   android: Object.values(ANDROID_MODE),
   windows: [],
 });
 const DISPLAY_VALUES = Platform.select({
   ios: Object.values(IOS_DISPLAY),
+  macos: Object.values(MACOS_DISPLAY),
   android: Object.values(ANDROID_DISPLAY),
   windows: [],
 });
@@ -436,7 +439,7 @@ export const App = () => {
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Text style={{padding: 10}}>Date format: </Text>
-                  <Picker
+                  {/* <Picker
                     style={{width: 200, height: 35}}
                     selectedValue={dateFormat}
                     onValueChange={(value) => setDateFormat(value)}>
@@ -450,11 +453,11 @@ export const App = () => {
                     />
                     <Picker.Item label="longdate" value="longdate" />
                     <Picker.Item label="shortdate" value="shortdate" />
-                  </Picker>
+                  </Picker> */}
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Text style={{padding: 10}}>Day of week format: </Text>
-                  <Picker
+                  {/* <Picker
                     style={{width: 200, height: 35}}
                     selectedValue={dayOfWeekFormat}
                     onValueChange={(value) => setDayOfWeekFormat(value)}>
@@ -467,11 +470,11 @@ export const App = () => {
                       value="{dayofweek.abbreviated(3)}"
                     />
                     <Picker.Item label="full" value="{dayofweek.full}" />
-                  </Picker>
+                  </Picker> */}
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Text style={{padding: 10}}>First day of week: </Text>
-                  <Picker
+                  {/* <Picker
                     style={{width: 200, height: 35}}
                     selectedValue={firstDayOfWeek}
                     onValueChange={(value) => setFirstDayOfWeek(value)}>
@@ -491,7 +494,7 @@ export const App = () => {
                       label="Saturday"
                       value={DAY_OF_WEEK.Saturday}
                     />
-                  </Picker>
+                  </Picker> */}
                 </View>
 
                 <DateTimePicker
@@ -523,17 +526,17 @@ export const App = () => {
                   <Text style={{padding: 10, marginTop: 10}}>
                     Clock format (AM/PM):{' '}
                   </Text>
-                  <Picker
+                  {/* <Picker
                     style={{width: 200, height: 35, marginTop: 10}}
                     selectedValue={is24Hours}
                     onValueChange={(value) => set24Hours(value)}>
                     <Picker.Item label="12-hour clock" value={false} />
                     <Picker.Item label="24-hour clock" value={true} />
-                  </Picker>
+                  </Picker> */}
                 </View>
                 <View style={{flexDirection: 'row'}}>
                   <Text style={{padding: 10}}>Minute interval: </Text>
-                  <Picker
+                  {/* <Picker
                     style={{width: 200, height: 35}}
                     selectedValue={interval}
                     onValueChange={(value) => setMinInterval(value)}>
@@ -541,7 +544,7 @@ export const App = () => {
                     <Picker.Item label="12 minute step" value={12} />
                     <Picker.Item label="15 minute step" value={15} />
                     <Picker.Item label="17 minute step" value={17} />
-                  </Picker>
+                  </Picker> */}
                 </View>
                 <DateTimePicker
                   mode="time"
