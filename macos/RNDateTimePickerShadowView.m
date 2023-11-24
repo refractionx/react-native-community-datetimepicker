@@ -71,8 +71,8 @@ static YGSize RNDateTimePickerShadowViewMeasure(YGNodeRef node, float width, YGM
 //    }
 
     // size = [shadowPickerView.picker sizeThatFits:UILayoutFittingCompressedSize];
-      size = CGSizeMake(200, 100);
-    size.width += 10;
+     size = CGSizeMake(220, 27);
+    //size.width += 10;
   });
 
   return (YGSize){

@@ -30,6 +30,11 @@
       
       [self setTarget:self];
       [self setAction:@selector(didChange)];
+      [self setDatePickerElements:NSDatePickerElementFlagYearMonthDay];
+      NSLocale* loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"];
+      [self setLocale:loc];
+      [self setDatePickerStyle:NSDatePickerStyleTextField];
+      self.presentsCalendarOverlay = YES;
 //      [self addTarget:self action:@selector(onDismiss:) forControlEvents:UIControlEventEditingDidEnd];
     #endif
 
